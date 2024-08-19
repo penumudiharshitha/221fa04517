@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-image: url('https://tse1.mm.bing.net/th?id=OIP.WHvPEhLhucDYe9UXnasFrwHaEK&pid=Api&P=0&h=180.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 80px 20px 20px 20px;
+            text-align: left;
+            margin: 20px 0;
+            background: none;
+            border-radius: 10px;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .home-image-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .home-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1.home-heading {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .highlight {
+            color: skyblue;
+        }
+
+        .projects {
+            padding: 100px 0; /* Increased padding for more space around the section */
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .projects h2 {
+            font-size: 40px; /* Increased font size for the heading */
+            margin-bottom: 40px; /* Added margin below the heading */
+		text-align:center;
+        }
+
+        .projects-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px; /* Increased gap between project items */
+        }
+
+        .project-item {
+            flex: 1;
+            min-width: 350px; /* Increased minimum width for project items */
+            background: #fff;
+            border-radius: 12px; /* Slightly increased border-radius for rounded corners */
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increased shadow for more depth */
+            text-align: center;
+            padding: 30px; /* Increased padding inside project items */
+        }
+
+        .project-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .project-item h3 {
+            margin-top: 20px; /* Increased margin for better spacing */
+            color: #1f4037;
+            font-size: 24px; /* Increased font size for project titles */
+        }
+
+        .project-item p {
+            font-size: 18px; /* Increased font size for project descriptions */
+            margin-top: 10px;
+            color: #555; /* Adjusted text color for better readability */
+        }
+
+.contact {
+    padding: 60px 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contact h2 {
+    font-size: 40px; /* Increased font size for the heading */
+    margin-bottom: 40px; /* Added margin below the heading */
+    color: #fff;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-content form {
+    max-width: 600px; /* Set a maximum width for the form */
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Slight background color for form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-content label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.contact-content input,
+.contact-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.contact-content button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #1f4037;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-content button:hover {
+    background: #99f2c8;
+}
+        .achievements-section {
+            text-align:center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .achievement-frame {
+            width: 300px; /* Set fixed width for achievement frames */
+            height: 200px; /* Set fixed height for achievement frames */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .achievement-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+	.achievements{
+		text-align:center;
+
+      	}
+
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px; /* Space below the About Me section */
+        }
+
+        .about-image-wrapper {
+            flex: 0 0 180px; /* Fix the width of the image wrapper */
+        }
+
+        .about-image {
+            width: 180px;
+            height: 250px;
+            border-radius: 5px;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .education-container,
+        .achievements-section {
+            text-align: center; /* Center align text */
+        }
+
+        .education-container {
+            margin: 20px 0;
+        }
+
+        .education-list {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .education-list p {
+            margin: 5px 0;
+        }
+	.skills{
+		text-align:center;
+	}
+	.contact{
+		text-align:center;
+	}
+	.cr{
+		text-align:center;
+	}
+	    		
+    </style>
+</head>
+<body>
+    <!-- Header with Fixed Navbar -->
+    <header>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1 class="home-heading">Welcome to my Portfolio website, <span class="highlight">I'm Harshitha</span></h1>
+        <!-- Circular Image -->
+        
+        <p>Explore my work and learn more about me. This portfolio showcases my projects, skills, and background. Navigate through the sections to find out more.</p>
+	<div class="home-image-wrapper">
+            <img src="ds.jpg" alt="Profile Image" class="home-image">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h1>About Me</h1>
+        <!-- Flex Container for Image and Text -->
+        <div class="about-content">
+            <!-- Image Frame -->
+            <div class="about-image-wrapper">
+                <img src="har.jpg" alt="har" class="about-image">
+            </div>
+
+            <!-- About Text -->
+            <div class="about-text">
+                <p>Hello! I'm Harshitha, a passionate web developer with a strong educational background. I completed my schooling at Kanna School, pursued my intermediate studies at Srichaitanya College, and I am currently in my 3rd year of B.Tech at Vignan University.</p>
+                <p>My educational journey has shaped my passion for technology and web development. I have been involved in several projects that have allowed me to develop a solid understanding of web development principles and best practices.</p>
+                
+                <!-- Education Section -->
+                <div class="education-container">
+                    <h2>Education</h2>
+                    <div class="education-list">
+                        <p><strong>Schooling:</strong> Kanna School</p>
+                        <p><strong>Intermediate:</strong> Srichaitanya College</p>
+                        <p><strong>B.Tech (3rd Year):</strong> Vignan University</p>
+                    </div>
+                </div>
+
+                <!-- Achievements Section -->
+                <h2 class="achievements">Achievements</h2>
+                <div class="achievements-section">
+                    <div class="achievement-frame">
+                        <img src="mo.jpg" alt="achievement1">
+                    </div>
+                    <div class="achievement-frame">
+                        <img src="rk.jpg" alt="achievement2">
+                    </div>
+                    <div class="achievement-frame">
+                        <img src="lik.jpg" alt="achievement3">
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <h2 class="skills">Skills</h2>
+                <p><strong>Front-End:</strong> C, HTML, PYTHON, CSS</p>
+                <p>I am always eager to learn new technologies and improve my skills. Feel free to reach out if you would like to discuss potential collaborations or opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-content">
+                <div class="project-item">
+                    <img src="https://up.yimg.com/ib/th?id=OIP.EoTNDao7dVjPz30GvtetBwHaE7&pid=Api&rs=1&c=1&qlt=95&w=160&h=106.jpg" alt="Project 1">
+                    <h3>Adult height prediction</h3>
+                    <p>Adult height prediction uses statistical and machine learning models to estimate an individual's final height based on various factors, such as parental heights and growth patterns. By analyzing historical data and incorporating genetic and environmental variables, these models provide a probabilistic estimate of future height. This approach helps in understanding growth trends and making informed predictions about potential height outcomes.</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.SgNJP5W_x_oztN5O-TvCcwHaD5&pid=Api&P=0&h=180.png" alt="Project 2">
+                    <h3>Water quality prediction</h3>
+                    <p>Water quality prediction involves using machine learning models to forecast the quality of water based on various parameters. By analyzing historical data on factors like temperature, pH, turbidity, and pollutant levels, these models can predict future water conditions. This helps in identifying potential contamination events and ensuring safe drinking water. Accurate predictions are essential for effective water management and public health protection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="contact">Contact Me</h2>
+            <div class="contact-content">
+                <form action="your-server-endpoint" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+<footer>
+    <div class="footer">
+        <div class="col-12">
+            <div class="d-flex flex-row justify-content-center">
+                <div class="follow-us-icon-container">
+                    <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="follow-us-icon-container">
+                    <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="follow-us-icon-container">
+                    <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="cr">&copy; 2024 Harshitha. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
